@@ -27,17 +27,17 @@ architecture tb of half_adder_tb is
             a_in <= '0';
             b_in <= '1';
             wait for 1 ns;
-            assert(sum_out = '1') report "Fail 0/0" severity error;
+            assert(sum_out = '1') report "Fail 0/1" severity error;
 
             a_in <= '1';
             b_in <= '0';
             wait for 1 ns;
-            assert(sum_out = '1') report "Fail 0/0" severity error;
+            assert(sum_out = '1') report "Fail 1/0" severity error;
 
             a_in <= '1';
             b_in <= '1';
             wait for 1 ns;
-            assert(sum_out = '0') report "Fail 0/0" severity error;
+            assert(sum_out = '0') report "Fail 1/1" severity error;
 
             --Clear the inputs
             a_in <= '0';
@@ -46,4 +46,3 @@ architecture tb of half_adder_tb is
             wait;
           end process;
         end architecture tb;
-        
